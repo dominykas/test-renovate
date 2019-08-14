@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/dominykas/test-renovate#readme",
   "devDependencies": {
-    "@hapi/code": "5.x.x",
+    "@hapi/code": "6.x",
     "@hapi/lab": "19.x.x"
   }
 }
