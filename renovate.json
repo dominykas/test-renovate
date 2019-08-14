@@ -1,7 +1,7 @@
 {
   "packageRules": [
     {
-      "groupName": "hapi",
+      "groupName": "@hapi/*",
       "packagePatterns": ["@hapi/*"]
     }
   ]
