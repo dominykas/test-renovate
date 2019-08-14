@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/dominykas/test-renovate/issues"
   },
-  "homepage": "https://github.com/dominykas/test-renovate#readme"
+  "homepage": "https://github.com/dominykas/test-renovate#readme",
+  "devDependencies": {
+    "@hapi/code": "5.x.x",
+    "@hapi/lab": "19.x.x"
+  }
 }
