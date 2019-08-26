@@ -1,24 +1,32 @@
 {
-  "name": "@dominykas/test-renovate",
-  "private": true,
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@dominykas/test-things",
+  "version": "0.0.0",
+  "description": "Repository where I test things",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint-commits": "commitlint --from=${TRAVIS_BRANCH:-origin/master}",
+    "test": "lab -L -t 100 -m 5000 && npm run lint-commits"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dominykas/test-renovate.git"
   },
-  "author": "",
+  "author": "Dominykas Blyžė <hello@dominykas.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dominykas/test-renovate/issues"
   },
   "homepage": "https://github.com/dominykas/test-renovate#readme",
   "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "@hapi/code": "5.x.x",
-    "@hapi/lab": "19.x.x"
+    "@hapi/lab": "19.x.x",
+    "semantic-release": "^15.13.24"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
