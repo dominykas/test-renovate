@@ -10,7 +10,7 @@ cache:
 
 install:
   - "npm install --ignore-scripts"
-  - "node bin/allow-scripts.js"
+  - "npx allow-scripts"
 
 jobs:
   include:
