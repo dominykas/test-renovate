@@ -12,13 +12,13 @@ install:
   - "npm install --ignore-scripts"
   - "node bin/allow-scripts.js"
 
-#jobs:
-#  include:
-#    - stage: release
-#      if: branch = master AND type = push
-#      node_js: "10"
-#      deploy:
-#        provider: "script"
-#        skip_cleanup: true
-#        script:
-#          - "NPM_CONFIG_OTP=$(curl -s $NPM_OTP_URL) npx semantic-release"
+jobs:
+  include:
+    - stage: release
+      if: branch = master AND type = push
+      node_js: "10"
+      deploy:
+        provider: "script"
+        skip_cleanup: true
+        script:
+          - "NPM_CONFIG_OTP=$(curl -s $NPM_OTP_URL) npx semantic-release"
