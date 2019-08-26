@@ -16,7 +16,7 @@ jobs:
   include:
     - stage: release
       if: branch = master AND type = push
-      node_js: "10"
+      node_js: "lts/*"
       deploy:
         provider: "script"
         skip_cleanup: true

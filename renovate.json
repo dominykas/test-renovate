@@ -1,4 +1,6 @@
 {
+  "enabledManagers": ["node", "npm"],
+  "supportPolicy": ["all"],
   "packageRules": [
     {
       "groupName": "@hapi/*",
