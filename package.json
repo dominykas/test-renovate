@@ -1,35 +1,25 @@
 {
   "name": "@dominykas/test-things",
+  "version": "0.0.0-development",
   "description": "Repository where I test things",
   "main": "lib/index.js",
   "scripts": {
-    "lint-commits": "commitlint --from=${TRAVIS_BRANCH:-origin/master}",
-    "test": "lab -L -t 100 -m 5000 && npm run lint-commits"
+    "test": "lab -L -t 100 -m 5000"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dominykas/test-renovate.git"
+    "url": "git+https://github.com/dominykas/test-things.git"
   },
   "author": "Dominykas Blyžė <hello@dominykas.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dominykas/test-renovate/issues"
+    "url": "https://github.com/dominykas/test-things/issues"
   },
-  "homepage": "https://github.com/dominykas/test-renovate#readme",
+  "homepage": "https://github.com/dominykas/test-things#readme",
   "devDependencies": {
-    "@commitlint/cli": "8.x",
-    "@commitlint/config-conventional": "8.x",
-    "@hapi/code": "6.x",
-    "@hapi/lab": "20.x",
+    "@hapi/code": "7.x",
+    "@hapi/lab": "21.x",
     "allow-scripts": "1.x",
-    "semantic-release": "15.x"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "allowScripts": {
-    "core-js": false
+    "semantic-release": "git+https://github.com/semantic-release/semantic-release.git#plugins-env"
   }
 }
