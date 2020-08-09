@@ -23,6 +23,6 @@
     "semantic-release": "git+https://github.com/semantic-release/semantic-release.git#plugins-env"
   },
   "dependencies": {
-    "@hapi/wreck": "^16.0.1"
+    "@hapi/wreck": "17.x"
   }
 }
