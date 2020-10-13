@@ -2,12 +2,10 @@ name: Node.js CI
 
 on:
   push:
-  pull_request:
-  schedule:
-    - cron: "0 0 * * *"
 
 jobs:
   prepare-node-matrix:
+    runs-on: ubuntu-latest
     steps:
       - uses: dominykas/test-things
         with:
