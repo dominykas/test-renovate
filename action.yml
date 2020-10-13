@@ -7,6 +7,9 @@ inputs:
   policy:
     description: 'Update policy'
     default: 'lts'
+outputs:
+  matrix:
+    description: 'An array of Node.js major versions'
 runs:
   using: 'node12'
   main: 'matrix.js'
