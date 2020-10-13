@@ -1,0 +1,31 @@
+name: Node.js CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  prepare-node-matrix:
+    steps:
+      - uses: dominykas/test-things
+        with:
+          gte: 10
+          policy: lts
+
+  test:
+
+    strategy:
+      matrix:
+        node-version: ${{ fromJson(needs.prepare-node-matrix.outputs.matrix) }}
+        operating-system: [ubuntu-latest, windows-latest, macos-latest]
+
+    runs-on: ${{ matrix.operating-system }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
