@@ -1,37 +1,55 @@
-name: Node.js CI
-
-on:
-  push:
-
-jobs:
-  prepare-node-matrix:
-    runs-on: ubuntu-latest
+#name: Node.js CI
+#
+#on:
+#  push:
+#
+#jobs:
+#  prepare-node-matrix:
+#    runs-on: ubuntu-latest
+##    outputs:
+##      matrix: ${{ steps.set-matrix.outputs.matrix }}
+##    steps:
+##      - uses: dominykas/test-things@master
+##        id: set-matrix
+##        with:
+##          gte: 10
+##          policy: lts
 #    outputs:
 #      matrix: ${{ steps.set-matrix.outputs.matrix }}
 #    steps:
-#      - uses: dominykas/test-things@master
-#        id: set-matrix
+#      - id: set-matrix
+#        run: echo "::set-output name=matrix::[10,12,14]"
+#
+#  test:
+#
+#    strategy:
+#      matrix:
+#        node-version: ${{ fromJson(needs.prepare-node-matrix.outputs.matrix) }}
+#        operating-system: [ubuntu-latest, windows-latest, macos-latest]
+#
+#    runs-on: ${{ matrix.operating-system }}
+#
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: Use Node.js ${{ matrix.node-version }}
+#        uses: actions/setup-node@v1
 #        with:
-#          gte: 10
-#          policy: lts
+#          node-version: ${{ matrix.node-version }}
+
+name: build
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - id: set-matrix
-        run: echo "::set-output name=matrix::[10,12,14]"
-
-  test:
-
+        run: echo "::set-output name=matrix::{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
     strategy:
-      matrix:
-        node-version: ${{ fromJson(needs.prepare-node-matrix.outputs.matrix) }}
-        operating-system: [ubuntu-latest, windows-latest, macos-latest]
-
-    runs-on: ${{ matrix.operating-system }}
-
+      matrix: ${{fromJson(needs.job1.outputs.matrix)}}
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+      - run: build
