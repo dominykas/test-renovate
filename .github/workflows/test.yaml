@@ -7,7 +7,7 @@ jobs:
   prepare-node-matrix:
     runs-on: ubuntu-latest
     steps:
-      - uses: dominykas/test-things
+      - uses: dominykas/test-things@master
         with:
           gte: 10
           policy: lts
