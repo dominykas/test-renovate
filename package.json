@@ -19,6 +19,7 @@
   "devDependencies": {
     "@hapi/code": "7.x",
     "@hapi/lab": "21.x",
+    "@vercel/ncc": "^0.24.1",
     "allow-scripts": "1.x",
     "semantic-release": "git+https://github.com/semantic-release/semantic-release.git#plugins-env"
   },

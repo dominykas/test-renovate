@@ -12,4 +12,4 @@ outputs:
     description: 'An array of Node.js major versions'
 runs:
   using: 'node12'
-  main: 'matrix.js'
+  main: 'dist/index.js'
