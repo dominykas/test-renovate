@@ -6,8 +6,11 @@ on:
 jobs:
   prepare-node-matrix:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - uses: dominykas/test-things@master
+        id: set-matrix
         with:
           gte: 10
           policy: lts
