@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - run: |
-          echo ${{ github.actor }}
+          curl -X GET -u $GITHUB_TOKEN:x-oauth-basic 'https://api.github.com/user'
