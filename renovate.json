@@ -1,16 +1,6 @@
 {
-  "enabledManagers": ["node", "npm"],
-  "supportPolicy": ["all"],
-  "packageRules": [
-    {
-      "groupName": "@hapi/*",
-      "packagePatterns": ["@hapi/*"]
-    }
+  "extends": [
+    "config:base"
   ],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": [
-      "at any time"
-    ]
-  }
+  "rangeStrategy": "replace"
 }

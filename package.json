@@ -17,14 +17,8 @@
   },
   "homepage": "https://github.com/dominykas/test-things#readme",
   "devDependencies": {
-    "@hapi/code": "7.x",
-    "@hapi/lab": "21.x",
-    "@vercel/ncc": "^0.24.1",
-    "allow-scripts": "1.x",
-    "semantic-release": "git+https://github.com/semantic-release/semantic-release.git#plugins-env"
+    "@hapi/code": "8.x",
+    "@hapi/lab": "24.x"
   },
-  "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@hapi/wreck": "17.x"
-  }
+  "dependencies": {}
 }
