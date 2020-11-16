@@ -1,0 +1,14 @@
+name: Check comment actor
+
+on:
+  issue_comment:
+    types: [ created ]
+
+jobs:
+  print_actor:
+    name: Print actor
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          echo ${{ github.actor }}
