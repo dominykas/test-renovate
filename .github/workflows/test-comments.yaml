@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - run: |
-          curl -X GET -u ${{ github.actor }}:$GITHUB_TOKEN 'https://api.github.com/user'
+          curl -X GET --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' 'https://api.github.com/user'
