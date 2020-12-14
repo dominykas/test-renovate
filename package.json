@@ -16,9 +16,7 @@
     "url": "https://github.com/dominykas/test-things/issues"
   },
   "homepage": "https://github.com/dominykas/test-things#readme",
-  "devDependencies": {
-    "@hapi/code": "8.x",
-    "@hapi/lab": "24.x"
-  },
-  "dependencies": {}
+  "dependencies": {
+    "lodash4": "npm:lodash@^4.17.19"
+  }
 }
