@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/dominykas/test-things#readme",
   "dependencies": {
-    "lodash4": "npm:lodash@^4.17.19"
+    "lodash": "4.17.19"
   }
 }
