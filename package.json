@@ -3,6 +3,9 @@
   "version": "0.0.0-development",
   "description": "Repository where I test things",
   "main": "lib/index.js",
+  "bin": {
+    "test-things": "./bin/test-things"
+  },
   "scripts": {
     "test": "lab -L -t 100 -m 5000"
   },
