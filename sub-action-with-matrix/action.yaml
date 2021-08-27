@@ -1,0 +1,14 @@
+name: "sub-action with matrix"
+description: "Let's see if we can have a matrix inside this sub-action"
+
+runs:
+  using: "composite"
+
+  strategy:
+    matrix:
+      node-version: [ 16, 14, 12 ]
+
+  steps:
+  - run: echo ${NODE_VERSION}
+    with:
+      NODE_VERSION: ${{ matrix.node-version }}

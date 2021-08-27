@@ -1,0 +1,7 @@
+on: [push]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: dominykas/test-things/sub-action-with-matrix@main
