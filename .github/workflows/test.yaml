@@ -1,5 +1,11 @@
 on:
   workflow_call:
+    inputs:
+      upgrade-policy:
+        description: 'Node.js version upgrade policy. Allowed values: `lts` (default), `lts/strict`, `all`.'
+        default: 'lts'
+        required: false
+        type: string
 
 jobs:
 

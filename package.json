@@ -21,5 +21,8 @@
   "homepage": "https://github.com/dominykas/test-things#readme",
   "dependencies": {
     "lodash": "4.17.19"
+  },
+  "engines": {
+    "node": ">= 10"
   }
 }
