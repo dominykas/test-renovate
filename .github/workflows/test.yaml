@@ -20,7 +20,7 @@ jobs:
     - uses: dominykas/test-things/actions/prepare-matrix@main
       id: set-matrix
       with:
-        upgrade-policy: ${{ upgrade-policy }}
+        upgradePolicy: ${{ inputs.upgradePolicy }}
 
   test:
     runs-on: ubuntu-latest
