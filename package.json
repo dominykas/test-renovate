@@ -7,7 +7,7 @@
     "test-things": "./bin/test-things"
   },
   "scripts": {
-    "test": "lab -L -t 100 -m 5000"
+    "test": "npx -- @hapi/lab -L -t 100 -m 5000"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/dominykas/test-things#readme",
   "dependencies": {
-    "lodash": "4.17.19"
+    "@hapi/code": "^8.0.3",
+    "@hapi/lab": "^24.3.2",
+    "lodash": "^4.17.19"
   },
   "engines": {
     "node": ">= 10"
