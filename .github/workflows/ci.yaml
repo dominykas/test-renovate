@@ -10,4 +10,4 @@ on:
 
 jobs:
   test:
-    uses: dominykas/test-things/workflows/test.yaml@master
+    uses: dominykas/test-things/.github/workflows/test.yaml@master
