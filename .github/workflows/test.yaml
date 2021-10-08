@@ -1,21 +1,34 @@
 on:
   workflow_call:
     inputs:
-      upgrade-policy:
-        description: 'Node.js version upgrade policy. Allowed values: `lts` (default), `lts/strict`, `all`.'
-        default: 'lts'
+      upgradePolicy:
+        description: "Node.js version upgrade policy. Allowed values: `lts` (default), `lts/strict`, `all`."
+        default: lts
         required: false
         type: string
 
 jobs:
 
-  test:
-
+  prepare-node-matrix:
     runs-on: ubuntu-latest
+
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: dominykas/test-things/actions/prepare-matrix@main
+      id: set-matrix
+      with:
+        upgrade-policy: ${{ upgrade-policy }}
+
+  test:
+    runs-on: ubuntu-latest
+    needs: prepare-node-matrix
 
     strategy:
       matrix:
-        node-version: [ 16, 14, 12 ]
+        node-version: ${{ fromJson(needs.prepare-node-matrix.outputs.matrix) }}
 
     steps:
     - uses: actions/checkout@v2
@@ -24,19 +37,3 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm run tests-only
-
-  lint:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [ 16 ]
-
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run lint

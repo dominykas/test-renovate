@@ -12,4 +12,4 @@ jobs:
   test:
     uses: dominykas/test-things/.github/workflows/test.yaml@main
     with:
-      upgrade-policy: lts
+      upgradePolicy: lts
