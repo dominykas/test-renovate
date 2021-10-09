@@ -10,6 +10,6 @@ on:
 
 jobs:
   test:
-    uses: dominykas/test-things/.github/workflows/test.yaml@main
+    uses: dominykas/action/.github/workflows/node-test.yaml@main
     with:
       upgradePolicy: lts
