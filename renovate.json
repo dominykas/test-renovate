@@ -4,5 +4,11 @@
     ":preserveSemverRanges",
     ":maintainLockFilesWeekly",
     ":disableDependencyDashboard"
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["jenkins-plugins"],
+      "versioning": "loose"
+    }
   ]
 }
