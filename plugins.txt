@@ -1,4 +1,4 @@
 kubernetes:1.31.1
-jackson2-api:2.13.0-230.v59243c64b0a5
+jackson2-api:2.13.1-244.v773c36c5b330
 kubernetes-client-api:5.10.1-171.vaa0774fb8c20
 structs:1.24
