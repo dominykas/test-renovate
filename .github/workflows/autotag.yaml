@@ -1,0 +1,13 @@
+name: Automatically move the major tag vX when vX.Y.Z is created
+
+on:
+  push:
+    tags:
+    - v*
+
+jobs:
+  autotag-major:
+#    if: github.event.base_ref=='refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+    - run: "echo ${{ github.event.base_ref }}"
