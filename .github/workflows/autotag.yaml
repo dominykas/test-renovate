@@ -16,4 +16,8 @@ jobs:
       uses: actions/github-script@v5
       with:
         script: |
-          console.log(context);
+          console.log(await github.git.getRef({
+            owner: context.repo.owner,
+            ref: "heads/main",
+            repo: context.repo.repo,
+          }));
