@@ -21,11 +21,9 @@
   "homepage": "https://github.com/dominykas/test-things#readme",
   "dependencies": {
     "@hapi/code": "^8.0.3",
-    "@hapi/lab": "^24.3.2",
-    "lodash": "^4.17.19",
-    "semver": "^7.3.5"
+    "@hapi/lab": "^24.3.2"
   },
   "engines": {
-    "node": ">= 10"
+    "node": ">= 16"
   }
 }
