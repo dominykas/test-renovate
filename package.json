@@ -1,6 +1,6 @@
 {
   "name": "@dominykas/test-things",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "description": "Repository where I test things",
   "main": "lib/index.js",
   "bin": {
