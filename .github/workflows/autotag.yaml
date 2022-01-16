@@ -11,13 +11,31 @@ jobs:
 #    if: github.event.base_ref=='refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-    - run: "echo '${{ github.event.after }}'"
     - name: Get repo HEAD ref
       uses: actions/github-script@v5
       with:
         script: |
-          console.log(await github.rest.git.getRef({
-            owner: context.repo.owner,
-            ref: "heads/main",
-            repo: context.repo.repo,
-          }));
+          const parsed = context.ref.match(/^refs\/tags\/(?<minor>(?<major>v\d+)\.\d+)\.\d+$/) 
+          if (!parsed) {
+            console.log(`Ignoring tag ${context.ref} - not a semver release tag.`);
+            return;
+          }
+          
+          const repoHeadSha = await github.rest.git.getRef({ 
+            ref: 'HEAD', 
+            owner: context.repo.owner, 
+            repo: context.repo.repo 
+          }).data.object.sha;
+          
+          if (repoHeadSha !== context.sha) {
+            console.log(`Ignoring tag at ${context.sha}, because repo HEAD is at ${repoHeadSha}.`);
+            return;
+          }
+          
+          core.setOutput('major', parsed.groups.major);
+          core.setOutput('minor', parsed.groups.minor);
+
+      id: new-tag
+
+    - run: "echo ${{ steps.new-tag.outputs.major }]"
+      if: ${{ steps.new-tag.outputs.major }}
