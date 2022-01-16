@@ -16,8 +16,6 @@ jobs:
       with:
         script: |
           
-          console.log(context.repo);
-          
           const parsed = context.ref.match(/^refs\/tags\/(?<minor>(?<major>v\d+)\.\d+)\.\d+$/) 
           if (!parsed) {
             console.log(`Ignoring tag ${context.ref} - not a semver release tag.`);
@@ -25,7 +23,7 @@ jobs:
           }
           
           const repoHeadSha = await github.rest.git.getRef({ 
-            ref: `heads/${context.repo.default_branch}`, 
+            ref: `heads/${context.payload.repository.default_branch}`, 
             owner: context.repo.owner, 
             repo: context.repo.repo 
           }).data.object.sha;
