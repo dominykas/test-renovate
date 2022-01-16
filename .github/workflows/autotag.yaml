@@ -10,4 +10,5 @@ jobs:
 #    if: github.event.base_ref=='refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-    - run: "echo '${{ toJSON(github.event) }}'"
+    - run: "echo '${{ github.event.after }}'"
+    - run: "git show-ref -s refs/heads/main"
