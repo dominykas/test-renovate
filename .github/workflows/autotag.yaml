@@ -15,6 +15,9 @@ jobs:
       uses: actions/github-script@v5
       with:
         script: |
+          
+          console.log(context.repo);
+          
           const parsed = context.ref.match(/^refs\/tags\/(?<minor>(?<major>v\d+)\.\d+)\.\d+$/) 
           if (!parsed) {
             console.log(`Ignoring tag ${context.ref} - not a semver release tag.`);
