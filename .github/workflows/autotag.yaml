@@ -37,5 +37,5 @@ jobs:
 
       id: new-tag
 
-    - run: "echo ${{ steps.new-tag.outputs.major }]"
+    - run: "echo ${{ steps.new-tag.outputs.major }}"
       if: ${{ steps.new-tag.outputs.major }}
