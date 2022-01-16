@@ -1,4 +1,5 @@
-name: Automatically move the major tag vX when vX.Y.Z is created
+name: Move major tag
+# Automatically move the major tag vX when vX.Y.Z is created
 
 on:
   push:
@@ -11,4 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: "echo '${{ github.event.after }}'"
-    - run: "git show-ref -s refs/heads/main"
+    - name: Get repo HEAD ref
+      uses: actions/github-script@v5
+      with:
+        script: |
+          console.log(context);
