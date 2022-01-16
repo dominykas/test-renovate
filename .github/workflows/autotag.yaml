@@ -26,7 +26,7 @@ jobs:
             ref: `heads/${context.payload.repository.default_branch}`, 
             owner: context.repo.owner, 
             repo: context.repo.repo 
-          }).data.object.sha;
+          }).sha;
           
           if (repoHeadSha !== context.sha) {
             console.log(`Ignoring tag at ${context.sha}, because repo HEAD is at ${repoHeadSha}.`);
