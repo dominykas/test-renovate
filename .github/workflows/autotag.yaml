@@ -1,5 +1,6 @@
-name: Move major tag
 # Automatically move the major tag vX when vX.Y.Z is created
+
+name: Move major tag
 
 on:
   push:
