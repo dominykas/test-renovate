@@ -22,7 +22,7 @@ jobs:
           }
           
           const repoHeadSha = await github.rest.git.getRef({ 
-            ref: 'HEAD', 
+            ref: `heads/${context.repo.default_branch}`, 
             owner: context.repo.owner, 
             repo: context.repo.repo 
           }).data.object.sha;
