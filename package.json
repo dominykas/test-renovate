@@ -1,13 +1,14 @@
 {
   "name": "@dominykas/test-things",
-  "version": "0.0.0",
+  "version": "1.1.0",
   "description": "Repository where I test things",
   "main": "lib/index.js",
   "bin": {
     "test-things": "./bin/test-things"
   },
   "scripts": {
-    "test": "npx -- @hapi/lab -L -t 100 -m 5000"
+    "test": "npx -- @hapi/lab -L -t 100 -m 5000",
+    "postversion": "git tag --points-at HEAD"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,8 @@
   "dependencies": {
     "@hapi/code": "^8.0.3",
     "@hapi/lab": "^24.3.2",
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.19",
+    "semver": "^7.3.5"
   },
   "engines": {
     "node": ">= 10"
