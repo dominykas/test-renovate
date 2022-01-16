@@ -28,9 +28,7 @@ jobs:
             repo: context.repo.repo 
           });
           
-          console.log(response);
-          
-          const repoHeadSha = response.data.sha;
+          const repoHeadSha = response.data.object.sha;
           
           if (repoHeadSha !== context.sha) {
             console.log(`Ignoring tag at ${context.sha}, because repo HEAD is at ${repoHeadSha}.`);
