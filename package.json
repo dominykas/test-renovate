@@ -27,6 +27,6 @@
     "node": ">= 16"
   },
   "overrides": {
-    "@hapi/lab": "^23.0.0"
+    "@hapi/bossy": "^4.0.0"
   }
 }
