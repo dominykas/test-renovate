@@ -21,7 +21,8 @@
   "homepage": "https://github.com/dominykas/test-things#readme",
   "dependencies": {
     "@hapi/code": "^8.0.3",
-    "@hapi/lab": "^24.3.2"
+    "@hapi/lab": "^24.3.2",
+    "@dominykas/break-things": "git+https://github.com/dominykas/break-things.git#main"
   },
   "engines": {
     "node": ">= 16"
