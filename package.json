@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/dominykas/test-things#readme",
   "dependencies": {
-    "@hapi/code": "^8.0.3",
-    "@hapi/lab": "^24.3.2"
+    "@hapi/code": "^9.0.0",
+    "@hapi/lab": "^26.0.0"
   },
   "engines": {
     "node": ">= 16"
